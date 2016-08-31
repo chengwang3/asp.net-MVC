@@ -1,0 +1,17 @@
+﻿@using WebApplication1.ViewModels
+@model WebApplication1.ViewModels.EmployeeListViewModel
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+ <table>
+     <caption>@Model.UserName</caption>
+     <tr><td>姓名</td><td>薪水</td></tr>
+     @foreach (EmployeeViewModel item in @Model.Employees)
+     {
+         <tr><td>@item.EmployeeName</td><td style="background-color:@item.SalaryColor">@item.Salary</td></tr>
+     }
+ </table>
+</div>
